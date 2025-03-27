@@ -6,6 +6,7 @@ const config = require("../config");
 const app = express();
 
 const roles = require("../routes/rol.routes");
+const userRoutes = require("./routes/user.routes");
 
 //middlewares de configuracion
 app.use(cors());
@@ -23,5 +24,6 @@ app.set('port',config.app.port);
 
 //Rutas
 app.use("/api/rol", roles);
+app.use("/users", userRoutes);
 
 module.exports = app;
